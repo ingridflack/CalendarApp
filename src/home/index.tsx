@@ -1,21 +1,26 @@
-import { globalStyles } from '@/styles/global'
-import { Heading, Text } from '@ignite-ui/react'
-import { Container, Hero, Preview } from './styles'
+import { globalStyles } from '@/styles/global';
+import { Heading, Text } from '@ignite-ui/react';
+import { Container, Hero, Preview } from './styles';
 
-import appPreview from '../assets/appPreview.svg'
-import Image from 'next/image'
+import appPreview from '../assets/appPreview.svg';
+import Image from 'next/image';
+import { ClaimUsernameForm } from './components/ClaimUsernameForm';
 
-globalStyles()
+globalStyles();
 
-export default function Home() {
+function Home() {
   return (
     <Container>
       <Hero>
-        <Heading size="4xl">Agendamento descomplicado</Heading>
-        <Text size="lg">
+        <Heading as="h1" size="4xl">
+          Agendamento descomplicado
+        </Heading>
+        <Text size="xl">
           Conecte seu calendário e permita que as pessoas marquem agendamentos
           no seu tempo livre.
         </Text>
+
+        <ClaimUsernameForm />
       </Hero>
 
       <Preview>
@@ -28,5 +33,7 @@ export default function Home() {
         />
       </Preview>
     </Container>
-  )
+  );
 }
+
+export default Home;
